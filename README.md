@@ -1,5 +1,6 @@
 # JavaEEBusinessAppExample
 <h2>In this web application we will work on EJB, JNDI, JPA(Hibernate), JSF(Primeface)</h2>
+<img src="https://github.com/Coder-ACJHP/JavaEEBusinessAppExample/blob/master/web/WEB-INF/shot.png">
 <h3>How to run ?</h3>
 <ul>
  <li>Download the project and import it in any IDE</li>
