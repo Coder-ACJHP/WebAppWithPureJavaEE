@@ -6,41 +6,41 @@
       xmlns:p="http://primefaces.org/ui">
     <f:view contentType="text/html">
         <h:head>
+            <h:outputStylesheet library="awesome" name="css/font-awesome.css"/>
             <title>Edit Person</title>
         </h:head>
         <h:body>
             <div align="center">
                 <h:form enctype="multipart/form-data">
-                <h3>Edit Person</h3>
-                <h3>Hello from Java EE(EJB &spades; JNDI &spades; JPA) &rsaquo; JSF(Primeface)</h3>
-                <p:panelGrid columns="2">
-                        <p:outputLabel for="name" value="Name : " />
+                <h1>Edit Person</h1>
+                <h:panelGrid columns="2" cellpadding="5">
+                        <h:outputLabel for="name" value="Name : " style="font-weight:bold"/>
                         <p:inputText id="name" value="#{editManagedBean.person.NAME}" />
-                        <p:outputLabel for="lastName" value="Last name : " />
+                        <h:outputLabel for="lastName" value="Last name : " style="font-weight:bold" />
                         <p:inputText id="lastName" value="#{editManagedBean.person.LASTNAME}" />
-                        <p:outputLabel for="country" value="Nationality : " />
+                        <h:outputLabel for="country" value="Nationality : " style="font-weight:bold"/>
                         <p:inputText id="country" value="#{editManagedBean.person.NATIONALITY}" />
-                        <p:outputLabel for="birthdate" value="Birthdate : " />
+                        <h:outputLabel for="birthdate" value="Birthdate : " style="font-weight:bold" />
                         <p:inputMask id="birthdate" value="#{editManagedBean.person.BIRTHDATE}" mask="99-99-9999" />
-                        <p:outputLabel for="number" value="Phone number : " />
+                        <h:outputLabel for="number" value="Phone number : " style="font-weight:bold" />
                         <p:inputMask id="number" value="#{editManagedBean.person.PHONENUM}" mask="(999) 999-9999"/>
-                        <p:outputLabel for="address" value="Address : " />
+                        <h:outputLabel for="address" value="Address : " style="font-weight:bold" />
                         <p:inputText id="address" value="#{editManagedBean.person.ADDRESS}" />
-                        <p:outputLabel for="email" value="Email : " />
+                        <h:outputLabel for="email" value="Email : " style="font-weight:bold" />
                         <p:inputText id="email" value="#{editManagedBean.person.EMAIL}" validatorMessage="Invalid email format" >
                         <f:validateRegex pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
                         </p:inputText>
-                        <p:outputLabel for="marriage" value="Marriage : " />
+                        <h:outputLabel for="marriage" value="Marriage : " style="font-weight:bold" />
                         <p:inputText id="marriage" value="#{editManagedBean.person.MARRIAGESTATUS}" />
-                        <p:outputLabel for="about" value="About : " />
-                        <p:inputText id="about" value="#{editManagedBean.person.ABOUT}" />
-                        <p:outputLabel for="photo" value="Photo : " />
+                        <h:outputLabel for="about" value="About : " style="font-weight:bold" />
+                        <p:inputTextarea id="about" value="#{editManagedBean.person.ABOUT}" style="width: 270px;"/>
+                        <h:outputLabel for="photo" value="Photo : " style="font-weight:bold" />
                         <h:inputFile id="photo" value="#{editManagedBean.photoPart}"/>
+                </h:panelGrid>
                         <p:row>
-                            <p:commandButton value="Submit" ajax="false" actionListener="#{editManagedBean.editPerson(editManagedBean.person)}" />
-                            <p:commandButton value="Reset" ajax="false" action="#{editManagedBean.reset()}" />
+                            <p:commandButton value="Reset" ajax="false" action="#{editManagedBean.reset()}" icon="fa fa-eraser"/>
+                            <p:commandButton value="Submit" ajax="false" action="#{editManagedBean.editPerson()}" icon="fa fa-hdd-o"/>
                         </p:row>
-                </p:panelGrid>
                 </h:form>
             </div>
         </h:body>
