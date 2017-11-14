@@ -17,15 +17,54 @@
                  <h:form>
                      <h3>Hello from Java EE(EJB &spades; JNDI &spades; JPA) &rsaquo; JSF(Primeface)</h3>
                     <h:panelGrid columns="3">
-                       <p:outputLabel for="name" value="User name : " />
+                       <p:outputLabel for="name" value="Search by name : " />
                        <p:inputText id="name" value="#{sessionManagedbean.message}" />
                        <p:commandButton value="Fetch User Detail" id="focus">
                             <f:ajax execute="name" render="show"/>
                        </p:commandButton>
                        <p:tooltip id="toolTipTrack" for="focus" value="Will fetch with Ajax" trackMouse="true" />
                      </h:panelGrid>
-                     <h:panelGrid columns="1"> 
-                         <p:outputLabel id="show" value="#{sessionManagedbean.sayHelloToUser()}"/>
+                     <h:panelGrid> 
+                         <p:dataTable id="show" var="person" value="#{sessionManagedbean.getPersonList()}" resizableColumns="true" style="width:1100px" >
+                             <p:column headerText="Photo">
+                                 <img src="data:image/jpeg;base64,#{person.PHOTO}" width="50" height="50" alt="no image"/>
+                            </p:column>
+                             <p:column headerText="Name">
+                                 <h:outputText value="#{person.NAME}" />
+                            </p:column>
+                             <p:column headerText="Last name">
+                                 <h:outputText value="#{person.LASTNAME}" />
+                            </p:column>
+                             <p:column headerText="Country">
+                                 <h:outputText value="#{person.NATIONALITY}" />
+                            </p:column>
+                             <p:column headerText="Birthdate">
+                                 <h:outputText value="#{person.BIRTHDATE}" />
+                            </p:column>
+                             <p:column headerText="Phone num">
+                                 <h:outputText value="#{person.PHONENUM}" />
+                            </p:column>
+                             <p:column headerText="Address">
+                                 <h:outputText value="#{person.ADDRESS}" />
+                            </p:column>
+                             <p:column headerText="Email">
+                                 <h:outputText value="#{person.EMAIL}" />
+                            </p:column>
+                             <p:column headerText="Marriage">
+                                 <h:outputText value="#{person.MARRIAGESTATUS}" />
+                            </p:column>
+                             <p:column headerText="About">
+                                 <h:outputText value="#{person.ABOUT}" />
+                            </p:column>
+                             <p:column headerText="Edit">
+                                 <h:commandButton action="edit.xhtml?faces-redirect=true" value="Edit" actionListener="#{editManagedBean.attrListener}">
+                                     <f:attribute name="person" value="#{person}" />
+                                 </h:commandButton>
+                            </p:column>
+                             <p:column headerText="Delete">
+                                 <h:commandButton action="#{sessionManagedbean.deletePerson(person.ID)}" value="Delete" />
+                            </p:column>
+                         </p:dataTable>
                      </h:panelGrid>
                 </h:form>
             </div>
