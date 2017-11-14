@@ -1,11 +1,11 @@
-# JavaEEBusinessAppExample
-<h2>In this web application we will work on EJB, JNDI, JPA(Hibernate), JSF(Primeface)</h2>
+# Enterprise web application with JavaEE technologies
+<h2>EJB, JNDI, JPA(Hibernate), JSF(Primeface)</h2>
 <img src="https://github.com/Coder-ACJHP/JavaEEBusinessAppExample/blob/master/web/WEB-INF/shot.png">
 <h3>How to run ?</h3>
 <ul>
  <li>Download the project and import it in any IDE</li>
  <li>Download and install Wildfly 11.0.Final Application container if not exist</li>
- <li>Create Mysql datasource in wildfly with 'java:/MySqlDS' name.<a href="https://tomylab.wordpress.com/2016/07/24/how-to-add-a-datasource-to-wildfly/">Look at here if you don't know</a></li>
+ <li>Create Mysql datasource in wildfly with 'java:/MySqlDS' name and connect it with your database.<a href="https://tomylab.wordpress.com/2016/07/24/how-to-add-a-datasource-to-wildfly/">Look at here if you don't know</a></li>
  <li>Right click on project Clean and Built -> Deploy</li> 
 </ul>
 <h3>I hope this help you</h3>
